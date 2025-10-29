@@ -181,12 +181,14 @@
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          nombre: resultado.nombre,
-          nivel: resultado.nivel,
-          titulo: resultado.titulo,
-          puntaje: resultado.puntaje,
-          tiempo: resultado.tiempo
-        })
+    nombre: resultado.nombre,
+    titulo: resultado.titulo,
+    velocidad: resultado.velocidad,
+    comprension: resultado.comprension,
+    nivel: resultado.nivel,
+    tiempo: resultado.tiempo,
+    fecha: new Date().toLocaleString()
+  })
       }).then(() => {
         console.log("✅ Resultado enviado a Google Sheets");
       }).catch(err => {
@@ -408,5 +410,6 @@
   </script>
 </body>
 </html>
+
 
 
