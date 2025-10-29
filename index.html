@@ -15,6 +15,23 @@
   <!-- Babel (solo para desarrollo/ejemplo) -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .icon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .icon-block .icon {
+    width: 40px;
+    height: 40px;
+    color: #2563eb; /* azul moderno, puedes cambiarlo */
+    margin-bottom: 8px;
+  }
+</style>
 
 </head>
 <body style="margin:0;padding:0;font-family:'Poppins',sans-serif;">
@@ -230,7 +247,7 @@
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 <div className="text-center mb-6">
-                  <div style={{fontSize:36}}><i data-lucide={ICONS.sparkle} className="icon"></i></div>
+                  <div className="icon-block"><i data-lucide={ICONS.sparkle} className="icon"></i></div>
                   <h1 className="text-4xl font-extrabold mb-2" style={{color:'#0e4481'}}>Laboratorio de Lectura</h1>
                   <p className="text-lg" style={{color:'#0e4481', opacity:0.8}}>Nombre del alumno (obligatorio para guardar resultados)</p>
                 </div>
@@ -243,13 +260,13 @@
                   <h3 className="text-xl font-bold mb-4 text-center" style={{color:'#0e4481'}}>Selecciona tu nivel de inicio:</h3>
                   <div className="grid md:grid-cols-3 gap-4">
                     <button onClick={()=>iniciarTest('basico')} className="border-2 rounded-xl p-6 transition-all transform hover:scale-105" style={{backgroundColor:'rgba(239,231,34,0.15)', borderColor:'#efe722'}}>
-                      <div className="text-center"><div style={{fontSize:28}}><i data-lucide={ICONS.target} className="icon"></i></div><h4 className="font-bold text-lg mb-2" style={{color:'#0e4481'}}>Básico</h4></div>
+                      <div className="text-center"><div className="icon-block"><i data-lucide={ICONS.target} className="icon"></i></div><h4 className="font-bold text-lg mb-2" style={{color:'#0e4481'}}>Básico</h4></div>
                     </button>
                     <button onClick={()=>iniciarTest('intermedio')} className="border-2 rounded-xl p-6 transition-all transform hover:scale-105" style={{backgroundColor:'rgba(255,152,26,0.15)', borderColor:'#ff981a'}}>
-                      <div className="text-center"><div style={{fontSize:28}}><i data-lucide={ICONS.chart} className="icon"></i></div><h4 className="font-bold text-lg mb-2" style={{color:'#0e4481'}}>Intermedio</h4></div>
+                      <div className="text-center"><div className="icon-block"><i data-lucide={ICONS.chart} className="icon"></i></div><h4 className="font-bold text-lg mb-2" style={{color:'#0e4481'}}>Intermedio</h4></div>
                     </button>
                     <button onClick={()=>iniciarTest('avanzado')} className="border-2 rounded-xl p-6 transition-all transform hover:scale-105" style={{backgroundColor:'rgba(48,189,196,0.15)', borderColor:'#30bdc4'}}>
-                      <div className="text-center"><div style={{fontSize:28}}><i data-lucide={ICONS.trophy} className="icon"></i></div><h4 className="font-bold text-lg mb-2" style={{color:'#0e4481'}}>Avanzado</h4></div>
+                      <div className="text-center"><div className="icon-block"><i data-lucide={ICONS.trophy} className="icon"></i></div><h4 className="font-bold text-lg mb-2" style={{color:'#0e4481'}}>Avanzado</h4></div>
                     </button>
                   </div>
                 </div>
@@ -339,7 +356,7 @@
           <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-6">
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <div className="text-center mb-8"><div style={{fontSize:48}}><i data-lucide={ICONS.trophy} className="icon"></i></div><h2 className="text-3xl font-extrabold mb-2" style={{color:'#0e4481'}}>¡Test Completado!</h2><p style={{color:'#0e4481', opacity:0.8}}>{resultados.mensaje}</p></div>
+                <div className="text-center mb-8"><div className="icon-block"><i data-lucide={ICONS.trophy} className="icon"></i></div><h2 className="text-3xl font-extrabold mb-2" style={{color:'#0e4481'}}>¡Test Completado!</h2><p style={{color:'#0e4481', opacity:0.8}}>{resultados.mensaje}</p></div>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                   <div className="rounded-xl p-6 text-white" style={{background:'linear-gradient(135deg,#30bdc4 0%, #0e4481 100%)'}}>
@@ -418,6 +435,7 @@ setTimeout(() => {
   </script>
 </body>
 </html>
+
 
 
 
