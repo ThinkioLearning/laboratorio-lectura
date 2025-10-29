@@ -173,7 +173,25 @@
       // Guardado global (para que tú puedas ver todos los alumnos desde este navegador)
       saveResultToStorage(resultado);
       setAllResults(readAllStoredResults());
-
+// === Enviar también a Google Sheets ===
+      fetch(https://script.google.com/macros/s/AKfycbxzk9WwAlYVynPpMtYOmzduQvGU-t1ImyKOfcuzj9AFavHQxwXZLYbxKMkhvQN9PhrBZw/exec, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          nombre: resultado.nombre,
+          nivel: resultado.nivel,
+          titulo: resultado.titulo,
+          puntaje: resultado.puntaje,
+          tiempo: resultado.tiempo
+        })
+      }).then(() => {
+        console.log("✅ Resultado enviado a Google Sheets");
+      }).catch(err => {
+        console.error("❌ Error al enviar a Google Sheets:", err);
+      });
       setResultados({...resultado, mensaje});
       setPantalla('resultados');
     };
@@ -390,3 +408,4 @@
   </script>
 </body>
 </html>
+
